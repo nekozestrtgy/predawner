@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: predawner_production
-  username: predawner
-  password: <%= ENV['PREDAWNER_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/myspl/myspl.sock
