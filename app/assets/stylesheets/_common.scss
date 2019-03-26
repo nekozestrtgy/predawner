@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans','Noto Sans JP', sans-serif;
+}
+
+div {
+  display: block;
+}
+
+a:hover {
+  text-decoration: none;
+  opacity: .7;
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
