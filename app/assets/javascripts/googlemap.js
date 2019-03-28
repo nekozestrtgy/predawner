@@ -14,11 +14,27 @@ document.addEventListener( 'DOMContentLoaded', function() {
       var map = new google.maps.Map(document.getElementById('map'), Options);
 
       // placeマーカーの表示
-      var marker = new google.maps.Marker({
-        position:{ lat: gon.place_lat, lng: gon.place_lng },
-        map: map,
-        title: contentString
-      });
+      $.each(gon.place, function(index, place){
+        var marker = new google.maps.Marker({
+          position:{ lat: place.latitude, lng: place.longitude },
+          map: map,
+          title: place.name
+        });
+
+        // 情報ウィンドウの表示
+        var contentString = place.name;
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        marker.addListener('mouseover', function(){
+          infowindow.open(map, marker);
+        });
+        marker.addListener('mouseout', function(){
+          infowindow.close();
+        });
+      })
+
 
       // 現在地マーカーの表示
       var LatLng_current = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -37,18 +53,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
       });
 
       // 情報ウィンドウ
-      var contentString = gon.place_name;
-      var infowindow = new google.maps.InfoWindow({
-          content: contentString
-      });
-
-      marker.addListener('mouseover', function(){
-        infowindow.open(map, marker);
-      });
-      marker.addListener('mouseout', function(){
-        infowindow.close();
-      });
-
       var contentString_current = "現在地";
       var infowindow_current = new google.maps.InfoWindow({
           content: contentString_current
