@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_27_145456) do
+ActiveRecord::Schema.define(version: 2019_03_28_153129) do
 
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.time "opening_time", null: false
     t.time "closing_time", null: false
-    t.string "adress"
+    t.string "address"
     t.string "smoking_available"
     t.string "wifi_available"
     t.string "outlet_available"
