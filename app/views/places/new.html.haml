@@ -1,0 +1,33 @@
+.new-palace-form
+  = form_for @place do |p|
+    .new-palace-form__name
+      %p プレイス名
+      = p.text_field :name, placeholder: 'プレイス名を入力してください'
+    .new-palace-form__address
+      %p 住所
+      = p.text_field :address, placeholder: '住所を入力してください'
+    .new-palace-form__opening-time
+      %p 開店時間
+      = p.text_field :opening_time
+    .new-palace-form__closing-time
+      %p 閉店時間
+      = p.text_field :closing_time
+    .new-palace-form__smoking-available
+      %p 喫煙
+      = p.text_field :smoking_available
+    .new-palace-form__wifi-available
+      %p wifi
+      = p.text_field :wifi_available
+    .new-palace-form__outlet-available
+      %p 電源
+      = p.text_field :outlet_available
+    .new-palace-form__menu-price
+      %p 価格帯
+      = p.text_field :menu_price
+    .new-palace-form__homepage-url
+      %p ホームページのURL
+      = p.text_field :homepage_url
+      = p.text_field :latitude, type: 'hidden'
+      = p.text_field :longitude, type: 'hidden'
+    .new-palace-form__submit
+      = p.submit class: 'new_place_btn'
