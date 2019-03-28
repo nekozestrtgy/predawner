@@ -4,9 +4,9 @@ document.addEventListener( 'DOMContentLoaded', function() {
     function(position) {
 
       // 地図の描画
-      var latlng = new google.maps.LatLng(35.6811673, 139.7670516);
+      var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       var Options = {
-        zoom: 10,
+        zoom: 15,
         center: latlng,
         mapTypeID: 'roadmap'
       };
@@ -18,7 +18,8 @@ document.addEventListener( 'DOMContentLoaded', function() {
         var marker = new google.maps.Marker({
           position:{ lat: place.latitude, lng: place.longitude },
           map: map,
-          title: place.name
+          title: place.name,
+          zIndex: index,
         });
 
         // 情報ウィンドウの表示
@@ -43,13 +44,14 @@ document.addEventListener( 'DOMContentLoaded', function() {
           path: 'M16 16 L32 46 L48 16 L32 64 Z',
           fillColor: "blue",
           fillOpacity: 1,
-          anchor: new google.maps.Point( 11, 11 ),
+          anchor: new google.maps.Point( 32, 64 ),
         }
 
       var marker_current = new google.maps.Marker({
         position: LatLng_current,
         map: map,
         icon: symbol,
+        zIndex: 10000,
       });
 
       // 情報ウィンドウ
