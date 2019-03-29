@@ -15,7 +15,8 @@ function getLatLng(place){
       $("#new_place").get(0).submit();
     }
     else {
-      alert('Geocode was not successful for the following reason: ' + status )
+      $('.alert').css('display', 'inline-block');
+      alert('Geocode was not successful for the following reason: ' + status );
     $(".new_place_btn").prop("disabled", false);
     }
   }
