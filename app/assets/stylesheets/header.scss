@@ -1,0 +1,39 @@
+.notice {
+  display: none;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  position: fixed;
+  opacity: 0.5;
+  width: 100vw;
+  z-index: 2;
+  animation: header1, 3s, ease-out, 1s, 1, alternate;
+  .exit-bottun {
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    float: right;
+    margin-right: 20px;
+  }
+  @keyframes header1 {
+  0% {opacity: 0.5;}
+  100% {opacity: 0;}
+  }
+}
+.alert {
+  display: none;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  position: fixed;
+  opacity: 0.5;
+  width: 100vw;
+  z-index: 2;
+  .exit-bottun {
+    display: inline-block;
+    background-color: orange;
+    color: white;
+    float: right;
+    margin-right: 20px;
+  }
+}
