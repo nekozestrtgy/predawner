@@ -1,0 +1,10 @@
+.footer {
+  width: 100vw;
+  &__content {
+    height: 276px;
+    width: 1196px;
+    margin: 0 auto 24px;
+    background: rgba(70,130,180, 0.8);
+    z-index: 1;
+  }
+}

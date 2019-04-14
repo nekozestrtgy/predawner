@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable
          # :omniauthable,omniauth_providers:[:twitter]
 
-  validates :username, length: { maximum: 20 }, presence: true
+  validates :nickname, length: { maximum: 20 }, presence: true
   validates :password, length: { minimum: 6 }, presence: true
   validates :email, presence: true
 

@@ -1,20 +1,26 @@
 class PlacesController < ApplicationController
 
   def index
+    @current_user = User.find(current_user.id) if current_user
     @places = Place.all
     gon.place = @places
-    # gon.place_lat = @places.latitude
-    # gon.place_lng = @places.longitude
+    @search_places = Place.where('name LIKE(?) OR address LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%").limit(10)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def new
     @place = Place.new
+    @places = Place.all
+    gon.place = @places
   end
 
   def create
     @place = Place.new(place_params)
     @place.save
-    redirect_to root_path, notice: 'プレイスを登録しました'
+    redirect_to root_path, notice: 'お店を登録しました'
   end
 
   def show
@@ -22,7 +28,7 @@ class PlacesController < ApplicationController
 
   private
   def place_params
-    params.require(:place).permit(:name, :address, :opening_time, :closing_time, :smoking_available, :wifi_available, :outlet_available, :menu_price, :homepage_url, :latitude, :longitude)
+    params.require(:place).permit(:name, :address, :latitude, :longitude, :googlemap_place_id)
   end
 
 end
