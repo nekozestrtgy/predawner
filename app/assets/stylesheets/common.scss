@@ -3,8 +3,27 @@
   font-family: 'Open Sans','Noto Sans JP', sans-serif;
 }
 
+body, .user-menu {
+  background-color: #28385E;
+}
+
 div {
   display: block;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.content-box {
+  width: 1020px;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 a:hover {
@@ -14,6 +33,10 @@ a:hover {
 
 ul {
   list-style: none;
+}
+
+li {
+  color: white;
 }
 
 h2 {
@@ -26,8 +49,16 @@ h3 {
   font-weight: bold;
 }
 
+h1, h2, h3, h4, p, i {
+  color: white;
+}
+
 .clearfix:after {
     content: '';
     display: block;
     clear: both;
+}
+
+.current-place-btn {
+  cursor: pointer;
 }

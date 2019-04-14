@@ -70,3 +70,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'omniauth-twitter'
 gem 'gon'
 gem 'jquery-rails'
+gem 'font-awesome-sass'

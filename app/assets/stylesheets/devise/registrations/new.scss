@@ -1,0 +1,51 @@
+.users-signup {
+  min-height: 100vh;
+  padding: 24px 0;
+  &__title {
+    display: flex;
+    margin: 0 8px;
+    i, h2 {
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: 0.2em;
+      text-decoration: underline;
+    }
+  }
+  &__content {
+    margin: 16px;
+    #new_user {
+      label {
+        display: inline-block;
+        margin-top: 16px;
+        text-decoration: underline;
+        text-decoration-style: double;
+        color: white;
+      }
+      input {
+        width: 190px;
+      }
+      em {
+        color: white;
+        font-size: 14px;
+      }
+      .actions {
+        margin-top: 64px;
+        input {
+          float: right;
+          display: inline-block;
+          border: 1px solid white;
+          border-radius: 20px;
+          padding: 10px;
+          font-size: 12px;
+          cursor: pointer;
+          width: auto;
+        }
+        input:hover {
+          background-color: #CC3939;
+          color: white;
+          border-color: #CC3939;
+        }
+      }
+    }
+  }
+}

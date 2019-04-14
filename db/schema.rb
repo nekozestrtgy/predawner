@@ -10,22 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_28_153129) do
+ActiveRecord::Schema.define(version: 2019_04_07_105410) do
 
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.time "opening_time", null: false
-    t.time "closing_time", null: false
     t.string "address"
-    t.string "smoking_available"
-    t.string "wifi_available"
-    t.string "outlet_available"
-    t.string "menu_price"
-    t.string "homepage_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "googlemap_place_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -1,8 +1,66 @@
-.notice
-  = alert
-  .exit-bottun
-    ×
-.alert
-  = alert
-  .exit-bottun
-    ×
+%main.header.clearfix
+  .user-menu.wrapper
+    .user-menu__content
+      // ログイン状態で表示を切り替え
+      - if current_user
+        .user-menu__content__about-page
+          = link_to root_path do
+            = icon('fas','question-circle')
+            使い方
+        .user-menu__content__like
+          = link_to root_path do
+            = icon('fas','heart')
+            お気に入り
+        .user-menu__content__login
+          = link_to user_path(current_user) do
+            = icon('fas','bed')
+            = current_user.nickname
+      - else
+        .user-menu__content__about-page
+          = link_to root_path do
+            = icon('fas','question-circle')
+            使い方
+        .user-menu__content__signup
+          = link_to new_user_registration_path do
+            = icon('fas','user-plus')
+            会員登録
+        .user-menu__content__login
+          = link_to new_user_session_path do
+            = icon('fas','sign-in-alt')
+            ログイン
+  .notice
+    %p= notice
+    .exit-bottun
+      ×
+  .alert
+    %p= alert
+    .exit-bottun
+      ×
+  .header__content-box.clearfix
+    = link_to root_path do
+      .header__content-box__title.clearfix
+        %p  たまには、夜更かし。
+        %h1 predawner
+    .header__content-box__copy.clearfix
+      %p 朝までのお店と映画、本と音楽
+    .header__content-box__menu.clearfix
+      %ul
+        %li
+          = link_to new_place_path do
+            = icon('fas','map-marked-alt')
+            %p お店
+        %li
+          = link_to new_place_path do
+            = icon('fas','film')
+            %p 映画
+        %li
+          = link_to new_place_path do
+            = icon('fas','book')
+            %p 本
+        %li
+          = link_to new_place_path do
+            = icon('fas','music')
+            %p 音楽
+    -# .header__content-box__text
+    -#   = link_to "https://www.aozora.gr.jp/cards/001475/files/51769_46607.html" do
+    -#     %p{class: 'mimei-text'} 3月29日(金)から3月30日(土)へ。｜光線の明るく射す室と、木影などが障子窓に落ちて暗い日蔭の室とがある。其等の、さま／″＼の室の中には生活を異にし、気持を異にした、いろ／＼な、相互いに顔も知り合わないような人が住んでいる。▽賑かな町に住んでいる人は、心を浮き立てるような笛や、ラッパの音や、楽隊の音色や、または、夕暮方の電車の音などに耳を傾けて、あてない空想に耽ったり、また、華かな瓦斯の燈火のつく頃の夜の楽しさを思うて、気がうき／＼として、隣りや、向い筋から聞えて来る琴や、三味線の音色に、何んとなく、夢を見るようなうっとりとした気持になって、自分も、手にしていた紅い布きれを傍にやってほつれ髪を掻きあげながら、ほうっとした顔付で三味線にあわせて口ずさむ女もあろう。▽また、さびしい、室の裡に物思いに沈んで、眤じっと下を見つめて、何事をか考えている、青い顔の年老った女があろう。窓の障子の上には、夕暮方の光線がぼんやりと染んで、頭には幾分か白髪も交って頬に寄った小皺が目立って見える……室の中には、傷いた道具が僅かばかり並べられてあるばかりで、目を惹くような貴重のものも見当らない。女は、この広い世界にたゞ独り見捨てられた人のように頼りない様子である。▽一日をうか／＼と、おもしろおかしく、何事をも深く心にとゞめ考えもせずに暮らしているものがある。また、悲しみに沈んでしみじみとはかない身の上を思いわずらうものがある。しかも、同じい夕暮の一時を、いろ／＼の室の裡に、さま／″＼の人が異った気持を抱いて、異った生活をしている。▽賑かな、都会から汽車で二三時間も離れると、極めて淋しい、田舎に行くことが出来る。其処には、青い空の下に、独り一軒の家を建て、其の中うちには静かに、稀にしか人と顔も合わすことなく日を送っている人がある。遠く隔へだった、都会の歓楽に酔うて叫んでいる賑かな声も聞かない。また、悲惨な犠牲者の狂い働いている騒がしい響きの混った物音も聞かない。また、二十世紀の科学的文明が世界の幾千の都会に光りと色彩の美観を添え、益々繁華ならしめんとする余沢も蒙こうむっていない。たゞ千年前の青い空の下に、其の時分の昔の人も、こうして住んでいたというより他に思われない極めて単純な、自然の儘ままの質朴な生活をつゞけている人がある。頭を上げて見るものは悠久に青い空の色である。淋しく、西の空に沈んでゆく夕日に地平線の紅く色づく眺めである。草の葉が無心に風に吹かれて飛んでゆく小鳥の影の、いつしか見えなくなる、其黒い点ばかりである。

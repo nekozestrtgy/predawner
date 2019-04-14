@@ -1,4 +1,81 @@
-#map {
-  height: 500px;
-  width: 500px;
+.places-index {
+  padding: 24px 0;
+  &__title {
+    display: flex;
+    margin: 0 8px 24px;
+    i, h2 {
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: 0.2em;
+      text-decoration: underline;
+    }
+  }
+  &__content {
+    &__left {
+      float: left;
+    }
+    &__right {
+      float: right;
+      width: 500px;
+      padding-left: 16px;
+      position: relative;
+      #places-search-input {
+        width: 488px;
+      }
+      #places-search-result {
+        width: 488px;
+        div {
+          padding: 10px 20px;
+          font-size: 12px;
+          border: 1px solid white;
+          border-radius: 20px;
+          display: flex;
+          justify-content: space-between;
+          background-color: #28385E;
+          cursor: pointer;
+          p {
+            color: white;
+          }
+        }
+        div:hover {
+          background-color: #6A91C1;
+          p{
+            color: white;
+          }
+        }
+      }
+      .place-details {
+        margin: 16px;
+        position: absolute;
+        top: 16px;
+        &__name, &__address, &__opening-hours, &__phone-number, &__price-level, &__rating, &__website {
+          margin: 8px;
+        }
+        h4 {
+          text-decoration: underline;
+          text-decoration-style: double;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  &__btn {
+    margin-top: 16px;
+    width: 500px;
+    p {
+      display: inline-block;
+      border: 1px solid white;
+      border-radius: 20px;
+      padding: 10px;
+      font-size: 12px;
+      cursor: pointer;
+      float: right;
+    }
+    p:hover {
+      background-color: white;
+      color: #28385E;
+    }
+  }
 }

@@ -1,0 +1,17 @@
+.logout {
+  min-height: 100vh;
+  a {
+    display: inline-block;
+    margin-top: 16px;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  a:hover {
+    background-color: #CC3939;
+    border-color: #CC3939;
+    opacity: 1;
+  }
+}
