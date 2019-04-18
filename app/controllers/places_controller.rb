@@ -5,10 +5,10 @@ class PlacesController < ApplicationController
     @places = Place.all
     gon.place = @places
     @search_places = Place.where('name LIKE(?) OR address LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%").limit(10)
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end
   end
 
   def new
