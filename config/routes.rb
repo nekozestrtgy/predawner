@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'places#index'
+  root 'places#index', defaults: {format: :json}
 
   resources :users, only:[:show]
   resources :places, only:[:index, :new, :create, :show]
