@@ -61,4 +61,23 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+  after :updated, "assets:precompile" # 追加
+end
+
+namespace :assets do
+  desc "Precompile assets locally and then rsync to web servers"
+  task :precompile do
+    on roles(:web) do
+      rsync_host = host.to_s
+      run_locally do
+        with rails_env: fetch(:stage) do
+          execute "rake assets:precompile"
+        end
+
+        execute 'rsync -av --delete public/assets/ #{fetch(:user)}@#{rsync_host}:#{shared_path}/public/assets/'
+        execute "rm -rf public/assets"
+      end
+
+    end
+  end
 end
