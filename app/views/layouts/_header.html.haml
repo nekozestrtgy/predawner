@@ -14,7 +14,7 @@
         .user-menu__content__login
           = link_to user_path(current_user) do
             = icon('fas','bed')
-            = current_user.nickname
+            = current_user.username
       - else
         .user-menu__content__about-page
           = link_to root_path do

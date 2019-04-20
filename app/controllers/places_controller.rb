@@ -7,7 +7,7 @@ class PlacesController < ApplicationController
     @search_places = Place.where('name LIKE(?) OR address LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%").limit(10)
     respond_to do |format|
       format.html
-      format.json { render json: @search_places }
+      format.json
     end
   end
 

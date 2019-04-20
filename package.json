@@ -1,7 +1,0 @@
-{
-  "name": "predawner",
-  "private": true,
-  "dependencies": {
-    "@google/maps": "^0.5.5"
-  }
-}
