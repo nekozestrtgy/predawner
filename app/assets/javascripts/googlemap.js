@@ -1,6 +1,4 @@
-$(function () {
-
-// document.addEventListener( 'DOMContentLoaded', function() {
+document.addEventListener( 'DOMContentLoaded', function() {
   // navigator.geolocation.getCurrentPosition(
     // function(position) {
 
@@ -316,5 +314,4 @@ $(function () {
       });
     // }
   // )
-// })
-});
+})
