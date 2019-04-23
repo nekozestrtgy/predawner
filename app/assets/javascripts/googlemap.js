@@ -2,6 +2,11 @@ document.addEventListener( 'DOMContentLoaded', function() {
   // navigator.geolocation.getCurrentPosition(
     // function(position) {
 
+      // ターミナル駅latlng定義
+      var latlng_shibuya = new google.maps.LatLng(35.658034, 139.701636);
+      var latlng_shinjuku = new google.maps.LatLng(35.689738, 139.700391);
+      var latlng_ikebukuro = new google.maps.LatLng(35.729503, 139.7109);
+
       // 地図の描画
       // var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       var latlng = new google.maps.LatLng(35.658034, 139.701636);
@@ -49,6 +54,23 @@ document.addEventListener( 'DOMContentLoaded', function() {
       //   map.fitBounds(bounds)
       //   map.setZoom(15)
       // })
+
+      // ターミナル駅ボタン
+      $('.shibuya-btn').on('click', function() {
+        var bounds = new google.maps.LatLngBounds(latlng_shibuya);
+        map.fitBounds(bounds)
+        map.setZoom(15)
+      })
+      $('.shinjuku-btn').on('click', function() {
+        var bounds = new google.maps.LatLngBounds(latlng_shinjuku);
+        map.fitBounds(bounds)
+        map.setZoom(15)
+      })
+      $('.ikebukuro-btn').on('click', function() {
+        var bounds = new google.maps.LatLngBounds(latlng_ikebukuro);
+        map.fitBounds(bounds)
+        map.setZoom(15)
+      })
 
       // placeマーカーの表示
       $.each(gon.place, function(index, place){

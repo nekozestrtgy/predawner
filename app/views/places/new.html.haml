@@ -38,8 +38,11 @@
             %h4
             %p
     %section.places-new__btn
-      .places-new__btn__current-place.current-place-btn
-        %p 現在地を表示
+      .places-new__btn__current-place
+        %p.current-place-btn 現在地
+        %p.shibuya-btn 渋谷駅
+        %p.shinjuku-btn 新宿駅
+        %p.ikebukuro-btn 池袋駅
       .places-new__btn__registration
         = form_for @place do |p|
           = p.text_field :name, type: 'hidden'

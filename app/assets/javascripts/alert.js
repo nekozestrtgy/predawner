@@ -14,10 +14,16 @@ $(function() {
     $('.alert p').html('ごめんなさい、開発中です…泣')
     $('.alert').css('display', 'inline-block')
   })
-
+  // DRY
   $('.user-menu__content__like').on('click', function(e) {
     e.preventDefault()
     $('.alert p').html('ごめんなさい、開発中です…泣')
+    $('.alert').css('display', 'inline-block')
+  })
+
+  $('.current-place-btn').on('click', function(e) {
+    e.preventDefault()
+    $('.alert p').html('https通信、もしくはローカルでないと動きません…修正中です…泣')
     $('.alert').css('display', 'inline-block')
   })
 })
