@@ -1,9 +1,10 @@
 document.addEventListener( 'DOMContentLoaded', function() {
-  navigator.geolocation.getCurrentPosition(
-    function(position) {
+  // navigator.geolocation.getCurrentPosition(
+    // function(position) {
 
       // 地図の描画
-      var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      // var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      var latlng = new google.maps.LatLng(35.658034, 139.701636);
       var Options = {
         zoom: 15,
         center: latlng,
@@ -13,41 +14,41 @@ document.addEventListener( 'DOMContentLoaded', function() {
       var map = new google.maps.Map(document.getElementById('map'), Options);
 
       // 現在地マーカーの表示
-      var LatLng_current = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      // var LatLng_current = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-      var symbol = {
-          path: 'M16 16 L32 46 L48 16 L32 64 Z',
-          fillColor: "blue",
-          fillOpacity: 1,
-          anchor: new google.maps.Point( 32, 64 ),
-        }
+      // var symbol = {
+      //     path: 'M16 16 L32 46 L48 16 L32 64 Z',
+      //     fillColor: "blue",
+      //     fillOpacity: 1,
+      //     anchor: new google.maps.Point( 32, 64 ),
+      //   }
 
-      var marker_current = new google.maps.Marker({
-        position: LatLng_current,
-        map: map,
-        icon: symbol,
-        zIndex: 10000,
-      });
+      // var marker_current = new google.maps.Marker({
+      //   position: LatLng_current,
+      //   map: map,
+      //   icon: symbol,
+      //   zIndex: 10000,
+      // });
 
       // 情報ウィンドウ
-      var contentString_current = "現在地";
-      var infowindow_current = new google.maps.InfoWindow({
-          content: contentString_current
-      });
+      // var contentString_current = "現在地";
+      // var infowindow_current = new google.maps.InfoWindow({
+      //     content: contentString_current
+      // });
 
-      marker_current.addListener('mouseover', function(){
-        infowindow_current.open(map, marker_current);
-      });
-      marker_current.addListener('mouseout', function(){
-        infowindow_current.close();
-      });
+      // marker_current.addListener('mouseover', function(){
+      //   infowindow_current.open(map, marker_current);
+      // });
+      // marker_current.addListener('mouseout', function(){
+      //   infowindow_current.close();
+      // });
 
       //現在地ボタン
-      $('.current-place-btn').on('click', function() {
-        var bounds = new google.maps.LatLngBounds(LatLng_current);
-        map.fitBounds(bounds)
-        map.setZoom(15)
-      })
+      // $('.current-place-btn').on('click', function() {
+      //   var bounds = new google.maps.LatLngBounds(LatLng_current);
+      //   map.fitBounds(bounds)
+      //   map.setZoom(15)
+      // })
 
       // placeマーカーの表示
       $.each(gon.place, function(index, place){
@@ -79,6 +80,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
           var service = new google.maps.places.PlacesService(map);
           service.getDetails(request, function(place, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
+              // DRY
               $('.place-details__name h4').text('店名')
               $('.place-details__name p').text(place.name);
               $('.place-details__address h4').text('住所')
@@ -170,6 +172,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
           }
 
           //登録するplaceの詳細情報を表示
+          // DRY
           $('.place-details__name h4').text('店名')
           $('.place-details__name p').text(place.name);
           $('.place-details__address h4').text('住所')
@@ -250,6 +253,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
             }
             map.fitBounds(bounds);
 
+            // DRY
             $('.place-details__name h4').text('店名')
             $('.place-details__name p').text(place.name);
             $('.place-details__address h4').text('住所')
@@ -286,6 +290,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
           }
         })
       });
-    }
-  )
+    // }
+  // )
 })
